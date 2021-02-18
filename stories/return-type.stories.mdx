@@ -1,0 +1,22 @@
+<Meta title="TypeScript/ReturnType" />
+
+```ts
+function createPerson() {
+  return {
+    firstName: "Peter",
+    lastName: "Parker",
+  };
+}
+
+// option 1
+type Person = { firstName: string; lastName: string };
+
+// option 2
+type Person = ReturnType<typeof createPerson>;
+
+function handlePerson(person: Person) {
+  // Do stuff
+}
+```
+
+Ref: https://twitter.com/benawad/status/1270714603895287809
